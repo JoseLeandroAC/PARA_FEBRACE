@@ -19,7 +19,7 @@
             padding: 0 16px;
         }
 
-    
+
         h1 {
             font-weight: 600;
             text-align: center;
@@ -58,13 +58,13 @@
             background: #2b6cb0;
             border: none;
             color: #fff;
-            padding: 8px 16px;
+            padding: 7px 15px;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 0.92rem;
+            font-size: 1.05rem;
             cursor: pointer;
             transition: transform .15s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
             text-decoration: none;
             text-align: center;
             min-width: 120px;
@@ -75,12 +75,12 @@
         }
 
         .btn:disabled {
-            opacity: 0.6;
+            opacity: 0.7;
             cursor: not-allowed
         }
 
         .btn:hover {
-            background: #1d4ed8;
+            background: #002ca4;
             transform: translateY(-2px);
             box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
 
@@ -149,35 +149,6 @@
             letter-spacing: .5px;
             text-shadow: 0 2px 6px rgba(0, 0, 0, .25);
         }
-
-        .left-gif {
-            position: absolute;
-            top: 550px;
-            /* aumenta esse valor para descer mais (ex: 120px) */
-            left: 50px;
-            /* aumenta esse valor para mover mais para a direita */
-            z-index: 1;
-        }
-
-        .left-gif img {
-            width: 200px;
-            /* pode ajustar o tamanho se quiser */
-            opacity: 0.25;
-            /* transparência suave */
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-4px);
-            }
-        }
     </style>
 </head>
 
@@ -190,9 +161,7 @@
             <h1>Registro de Presença</h1>
         </div>
 
-        <div class="left-gif">
-            <img src="imagens/melhor.webp" alt="Engrenagens animadas">
-        </div>
+
 
         <div class="card">
 
