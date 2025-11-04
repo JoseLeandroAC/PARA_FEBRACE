@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOTUMAKER</title>
+
+  <style>
+    /* Fundo com gradiente */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0B1E3C, #162A53);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Container central */
+    .container {
+      text-align: center;
+      color: white;
+    }
+
+    /* Logo e nome */
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 42px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Slogan */
+    .slogan {
+      color: #AFC7E6;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    /* Botão */
+    .btn {
+      background-color: #2563EB;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 40px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn:hover {
+      background-color: #3B82F6;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Ícone da seta */
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Engrenagens decorativas (opcional) */
+    .gear {
+      position: absolute;
+      opacity: 0.08;
+      width: 120px;
+      height: auto;
+    }
+
+    .gear.left {
+      bottom: 40px;
+      left: 40px;
+    }
+
+    .gear.right {
+      top: 40px;
+      right: 40px;
+    }
+  </style>
+</head>
+<body>
+  <img src="#" class="gear left" alt="">
+  <img src="#" class="gear right" alt="">
+
+  <div class="container">
+    <!-- Ícone ou logo pode ser adicionado aqui -->
+    <div class="logo">VOTUMAKER</div>
+    <div class="slogan">Inovação, aprendizado e criação</div>
+
+    <button class="btn">
+      COMEÇAR AGORA
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/>
+      </svg>
+    </button>
+  </div>
+</body>
+</html>
