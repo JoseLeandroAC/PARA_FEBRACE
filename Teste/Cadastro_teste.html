@@ -58,20 +58,20 @@
             background: #2b6cb0;
             border: none;
             color: #fff;
-            padding: 8px 16px;
+            padding: 12px 19.5px;
             border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.20rem;
+            font-weight: 700;
+            font-size: 1.50rem;
             cursor: pointer;
             transition: transform .15s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;
-            box-shadow: 0 5px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 16px rgba(37, 99, 235, 0.3);
             text-decoration: none;
             text-align: center;
-            min-width: 130px;
+            min-width: 150px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 9px;
+            gap: 10px;
         }
 
         .btn:disabled {
@@ -155,21 +155,15 @@
 <body>
 
     <div class="wrap">
-
         <div class="brand">
             <img src="imagens/engrenagem.png" alt="icone" class="brand-icon">
             <h1>Registro de Presença</h1>
+            <a href="Teste_página.html"></a>
         </div>
-
-
         <div class="card">
-
             <video id="video" autoplay playsinline></video>
-
             <div class="controls">
                 <button id="btn-chamada" class="btn">Fazer Chamada</button>
-                <button id="register-button" class="btn">Cadastrar Alunos</button>
-                <a class="btn" href="/admin">Painel Admin</a>
             </div>
             <div id="status"></div>
             <pre class="log" id="log"></pre>
