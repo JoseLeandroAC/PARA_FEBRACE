@@ -1,11 +1,168 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COZINHA</title>
+    <title>Painel Refeitório</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(145deg, #061126, #02308a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .container {
+            background-color: #1f4466;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #58b8ff;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .periodo {
+            color: white;
+            text-align: left;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .botoes-periodo {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2b5b84;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .botoes-periodo button {
+            flex: 1;
+            padding: 8px 0;
+            border: none;
+            background: none;
+            color: #9ecde4;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .botoes-periodo button.active {
+            background-color: #116d88;
+            color: #fff;
+        }
+
+        .botoes-periodo button:hover {
+            background-color: #165d7a;
+            color: #fff;
+        }
+
+        .turmas {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .turma {
+            background-color: #2b5b84;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .turma:hover {
+            background-color: #116d88;
+        }
+
+        .seta {
+            font-size: 1.2em;
+        }
+
+        /* Quando ativo */
+        .turmas.ativo {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>PAINEL REFEITÓRIO 🍴</h1>
+
+        <div class="periodo">Período</div>
+
+        <div class="botoes-periodo">
+            <button id="manhaBtn">Manhã</button>
+            <button id="tardeBtn">Tarde</button>
+        </div>
+
+        <!-- Turmas da manhã -->
+        <div id="manha" class="turmas">
+            <div class="turma">6º A - EM <span class="seta">→</span></div>
+            <div class="turma">6º B - EM <span class="seta">→</span></div>
+            <div class="turma">7º B - EM <span class="seta">→</span></div>
+            <div class="turma">8º B - EM <span class="seta">→</span></div>
+            <div class="turma">9º B - EM <span class="seta">→</span></div>
+        </div>
+
+        <!-- Turmas da tarde -->
+        <div id="tarde" class="turmas">
+            <div class="turma">6º A - Tarde <span class="seta">→</span></div>
+            <div class="turma">6º B - Tarde <span class="seta">→</span></div>
+            <div class="turma">7º A - Tarde <span class="seta">→</span></div>
+            <div class="turma">8º A - Tarde <span class="seta">→</span></div>
+            <div class="turma">9º B - Tarde <span class="seta">→</span></div>
+        </div>
+    </div>
+
+    <script>
+        const btnManha = document.getElementById("manhaBtn");
+        const btnTarde = document.getElementById("tardeBtn");
+        const manha = document.getElementById("manha");
+        const tarde = document.getElementById("tarde");
+
+        function mostrarTurmas(periodoAtivo, periodoInativo, botaoAtivo, botaoInativo) {
+            // Remove classes de animação
+            periodoInativo.classList.remove("ativo");
+            botaoInativo.classList.remove("active");
+
+            // Adiciona animação de fade com pequeno delay
+            setTimeout(() => {
+                periodoAtivo.classList.add("ativo");
+                botaoAtivo.classList.add("active");
+            }, 100);
+        }
+
+        btnManha.addEventListener("click", () =>
+            mostrarTurmas(manha, tarde, btnManha, btnTarde)
+        );
+
+        btnTarde.addEventListener("click", () =>
+            mostrarTurmas(tarde, manha, btnTarde, btnManha)
+        );
+    </script>
 </body>
+
 </html>
