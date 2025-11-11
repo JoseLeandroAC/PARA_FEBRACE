@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Botão Animado</title>
+  <title>Botões Lado a Lado</title>
   <style>
-    /* Fundo com gradiente */
     body {
       margin: 0;
       height: 100vh;
@@ -18,7 +14,6 @@
       overflow: hidden;
     }
 
-    /* Animação de entrada */
     @keyframes slideUpFade {
       0% {
         opacity: 0;
@@ -31,12 +26,21 @@
       }
     }
 
-    /* Botão */
-    .btn {
+    /* CONTÊINER para os botões */
+    .btn-container {
       position: fixed;
       bottom: 40px;
       right: 40px;
-      background-color:#3b72e9;
+      display: flex;
+      gap: 20px; /* espaçamento entre os botões */
+      animation: slideUpFade 0.8s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    /* estilo base dos botões */
+    .btn,
+    .btna {
+      background-color: #3b72e9;
       color: white;
       border: none;
       border-radius: 12px;
@@ -48,38 +52,26 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      opacity: 0;
-      animation: slideUpFade 0.8s ease forwards;
-      /* animação */
-      animation-delay: 0.3s;
-      /* pequeno atraso */
-
-    }
-
-    .btn a {
       text-decoration: none;
-      color: white;
     }
 
-    .btn:hover {
-      background-color:#1b6cef;
+    .btn:hover,
+    .btna:hover {
+      background-color: #1b6cef;
       transform: translateY(-2px);
       box-shadow: 0 6px 12px rgba(31, 115, 250, 0.3);
     }
 
-    /* Ícone da seta */
     .btn svg {
       width: 18px;
       height: 18px;
       fill: white;
       transition: transform 0.3s ease;
-      transform: rotate(0deg);
     }
 
     .btn:hover svg {
-      transform: rotate(0deg) translateX(4px);
+      transform: translateX(4px);
     }
-
 
     .logo-sesi {
       position: absolute;
@@ -91,7 +83,6 @@
     .img {
       width: 50%;
     }
-
   </style>
 </head>
 
@@ -99,14 +90,17 @@
   <img src="imagens/logoo.png" class="img" alt="LOGO">
   <img src="imagens/sesi.png" class="logo-sesi" alt="SESI">
 
-  <button class="btn"><a href="../templates/index.html">
+  <!-- contêiner com os dois botões -->
+  <div class="btn-container">
+    <a href="../templates/index.html" class="btn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
       </svg>
-      REGISTRE-SE</a>
+      REGISTRE-SE
+    </a>
 
-      
-  </button>
+    <a href="Página_admin.html" class="btna">PAINEL ADMIN</a>
+  </div>
+  
 </body>
-
 </html>
