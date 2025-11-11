@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +13,18 @@
             background-color: #071629;
             color: #ecf0f1;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         h1 {
             text-align: center;
             color: #3498db;
             margin-bottom: 30px;
         }
-        
+
         .stats {
             display: flex;
             justify-content: center;
@@ -31,7 +32,7 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
-        
+
         .stat-item {
             background: #2c3e50;
             padding: 20px;
@@ -39,54 +40,55 @@
             text-align: center;
             min-width: 150px;
         }
-        
+
         .stat-number {
             font-size: 2.5em;
             font-weight: bold;
             color: #3498db;
             margin-bottom: 10px;
         }
-        
+
         .card {
             background: #2c3e50;
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
         }
-        
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
         }
-        
-        th, td {
+
+        th,
+        td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #34495e;
         }
-        
+
         th {
             background: #34495e;
             font-weight: bold;
             color: #3498db;
         }
-        
+
         .presente {
             color: #2ecc71;
             font-weight: bold;
         }
-        
+
         .ausente {
             color: #e74c3c;
             font-weight: bold;
         }
-        
+
         .actions {
             text-align: center;
             margin-top: 30px;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 25px;
@@ -100,40 +102,41 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        
+
         .btn:hover {
             background: #2980b9;
         }
-        
+
         .btn-secondary {
             background: #95a5a6;
         }
-        
+
         .btn-secondary:hover {
             background: #7f8c8d;
         }
-        
+
         .btn-warning {
             background: #f39c12;
         }
-        
+
         .btn-warning:hover {
             background: #e67e22;
         }
-        
+
         .btn-success {
             background: #27ae60;
         }
-        
+
         .btn-success:hover {
             background: #229954;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>📊 Painel Administrativo - Presenças</h1>
-        
+
         <div class="stats">
             <div class="stat-item">
                 <div class="stat-number">{{ total_alunos }}</div>
@@ -148,7 +151,7 @@
                 <div>Ausentes Hoje</div>
             </div>
         </div>
-        
+
         <div class="card">
             <h3>📋 Lista de Presença - Hoje ({{ data_hoje }})</h3>
             <table>
@@ -169,41 +172,43 @@
                         <td>{{ aluno.nome }}</td>
                         <td>
                             {% if aluno.email_responsavel %}
-                                {{ aluno.email_responsavel }}
+                            {{ aluno.email_responsavel }}
                             {% else %}
-                                <span style="color: #e74c3c;">❌ Não cadastrado</span>
+                            <span style="color: #e74c3c;">❌ Não cadastrado</span>
                             {% endif %}
                         </td>
                         <td>{{ aluno.turno if aluno.turno else 'manhã' }}</td>
                         <td>
                             {% if aluno.presente %}
-                                <span class="presente">✅ PRESENTE</span>
+                            <span class="presente">✅ PRESENTE</span>
                             {% else %}
-                                <span class="ausente">❌ AUSENTE</span>
+                            <span class="ausente">❌ AUSENTE</span>
                             {% endif %}
                         </td>
                         <td>
                             {% if aluno.horario %}
-                                {{ aluno.horario }}
+                            {{ aluno.horario }}
                             {% else %}
-                                -
+                            -
                             {% endif %}
                         </td>
                         <td>
                             {% if aluno.confianca %}
-                                {{ "%.1f"|format(aluno.confianca) }}%
+                            {{ "%.1f"|format(aluno.confianca) }}%
                             {% else %}
-                                -
+                            -
                             {% endif %}
                         </td>
                         <td>
                             {% if not aluno.email_responsavel %}
-                                <form method="POST" action="/alunos/{{ aluno.id }}/email" style="display: inline;">
-                                    <input type="email" name="email_responsavel" placeholder="email@exemplo.com" required style="padding: 5px; border-radius: 3px; border: 1px solid #34495e; background: #34495e; color: white; width: 150px; font-size: 12px;">
-                                    <button type="submit" class="btn" style="padding: 5px 10px; font-size: 12px; margin-left: 5px;">💾</button>
-                                </form>
+                            <form method="POST" action="/alunos/{{ aluno.id }}/email" style="display: inline;">
+                                <input type="email" name="email_responsavel" placeholder="email@exemplo.com" required
+                                    style="padding: 5px; border-radius: 3px; border: 1px solid #34495e; background: #34495e; color: white; width: 150px; font-size: 12px;">
+                                <button type="submit" class="btn"
+                                    style="padding: 5px 10px; font-size: 12px; margin-left: 5px;">💾</button>
+                            </form>
                             {% else %}
-                                <span style="color: #27ae60;">✓ Cadastrado</span>
+                            <span style="color: #27ae60;">✓ Cadastrado</span>
                             {% endif %}
                         </td>
                     </tr>
@@ -211,22 +216,26 @@
                 </tbody>
             </table>
         </div>
-        
+
         <!-- Formulário de Cadastro Manual -->
         <div class="card">
             <h3>📝 Cadastro Manual de Aluno</h3>
-            <form method="POST" action="/cadastrar_aluno_manual" style="display: flex; gap: 15px; flex-wrap: wrap; align-items: end;">
+            <form method="POST" action="/cadastrar_aluno_manual"
+                style="display: flex; gap: 15px; flex-wrap: wrap; align-items: end;">
                 <div>
                     <label for="nome_aluno">Nome do Aluno:</label><br>
-                    <input type="text" id="nome_aluno" name="nome_aluno" required style="padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #34495e; background: #34495e; color: white; width: 200px;">
+                    <input type="text" id="nome_aluno" name="nome_aluno" required
+                        style="padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #34495e; background: #34495e; color: white; width: 200px;">
                 </div>
                 <div>
                     <label for="email_responsavel">Email do Responsável:</label><br>
-                    <input type="email" id="email_responsavel" name="email_responsavel" required style="padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #34495e; background: #34495e; color: white; width: 250px;">
+                    <input type="email" id="email_responsavel" name="email_responsavel" required
+                        style="padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #34495e; background: #34495e; color: white; width: 250px;">
                 </div>
                 <div>
                     <label for="turno">Turno:</label><br>
-                    <select id="turno" name="turno" style="padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #34495e; background: #34495e; color: white; width: 120px;">
+                    <select id="turno" name="turno"
+                        style="padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #34495e; background: #34495e; color: white; width: 120px;">
                         <option value="manhã">Manhã</option>
                         <option value="tarde">Tarde</option>
                     </select>
@@ -256,7 +265,8 @@
             <button onclick="window.location.reload()" class="btn btn-secondary">🔄 Atualizar</button>
             <a href="teste_cozinha.html" class="btn btn-success">🍽️ Cozinha</a>
         </div>
-        
+
     </div>
 </body>
+
 </html>
