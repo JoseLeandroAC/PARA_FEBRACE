@@ -18,24 +18,25 @@
 
         .container {
             background-color: #1f4466;
-            padding: 30px;
+            padding: 50px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            width: 300px;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            height: 300px;
             text-align: center;
             overflow: hidden;
         }
 
         h1 {
             color: #58b8ff;
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             margin-bottom: 25px;
         }
 
         .periodo {
             color: white;
             text-align: left;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             font-weight: 600;
         }
 
@@ -43,14 +44,14 @@
             display: flex;
             justify-content: space-between;
             background-color: #2b5b84;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
         }
 
         .botoes-periodo button {
             flex: 1;
-            padding: 8px 0;
+            padding: 15px 0;
             border: none;
             background: none;
             color: #9ecde4;
@@ -72,7 +73,7 @@
         .turmas {
             display: none;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             opacity: 0;
             transform: translateY(10px);
             transition: opacity 0.4s ease, transform 0.4s ease;
@@ -81,7 +82,7 @@
         .turma {
             background-color: #2b5b84;
             color: #fff;
-            padding: 10px 15px;
+            padding: 18px 22px;
             border-radius: 6px;
             display: flex;
             justify-content: space-between;
@@ -95,7 +96,7 @@
         }
 
         .seta {
-            font-size: 1.2em;
+            font-size: 1.4em;
         }
 
         /* Quando ativo */
@@ -103,6 +104,17 @@
             display: flex;
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            width: 180px;
+        }
+
+        .img {
+            width: 180%;
         }
     </style>
 </head>
@@ -118,13 +130,19 @@
             <button id="tardeBtn">Tarde</button>
         </div>
 
+        <img src="imagens/logoo.png" class="logo" alt="VOTU">
+
         <!-- Turmas da manhã -->
         <div id="manha" class="turmas">
-            <div class="turma">6º A - EM <span class="seta">→</span></div>
-            <div class="turma">6º B - EM <span class="seta">→</span></div>
-            <div class="turma">7º B - EM <span class="seta">→</span></div>
-            <div class="turma">8º B - EM <span class="seta">→</span></div>
-            <div class="turma">9º B - EM <span class="seta">→</span></div>
+            <div class="turma">1º ANO - EFI <span class="seta">→</span></div>
+            <div class="turma">2º ANO - EFI <span class="seta">→</span></div>
+            <div class="turma">3º ANO - EFI <span class="seta">→</span></div>
+            <div class="turma">4º ANO - EFI <span class="seta">→</span></div>
+            <div class="turma">5º ANO - EFI <span class="seta">→</span></div>
+            <div class="turma">9º A - EFII <span class="seta">→</span></div>
+            <div class="turma">1º A/B - EM <span class="seta">→</span></div>
+            <div class="turma">2º A/B - EM <span class="seta">→</span></div>
+            <div class="turma">3º - EM <span class="seta">→</span></div>
         </div>
 
         <!-- Turmas da tarde -->
@@ -133,7 +151,7 @@
             <div class="turma">6º B - Tarde <span class="seta">→</span></div>
             <div class="turma">7º A - Tarde <span class="seta">→</span></div>
             <div class="turma">8º A - Tarde <span class="seta">→</span></div>
-            <div class="turma">9º B - Tarde <span class="seta">→</span></div>
+            <div class="turma">9º A - Tarde <span class="seta">→</span></div>
         </div>
     </div>
 
