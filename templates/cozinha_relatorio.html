@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório cozinha</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(145deg, #061126, #02308a);
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            background: #1f4466;
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: #7fc9ff;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .tabela {
+            background: #2b5b84;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .cabecalho,
+        .linha {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 14px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 1rem;
+        }
+
+        .cabecalho {
+            font-weight: bold;
+            background: #2f628f;
+        }
+
+        .linha:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>ALUNOS 9° A – MANHÃ</h1>
+
+        <div class="tabela">
+
+            <div class="cabecalho">
+                <div>Nome</div>
+                <div>Restrição alimentar</div>
+            </div>
+
+            <div class="linha">
+                <div>Carollayne Ferreira da Silva</div>
+                <div>Sim (intolerância a lactose)</div>
+            </div>
+
+            <div class="linha">
+                <div>Alana Camilli</div>
+                <div>Nenhuma</div>
+            </div>
+
+            <div class="linha">
+                <div>Guilherme Gaijutis</div>
+                <div>Nenhuma</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

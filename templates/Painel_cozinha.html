@@ -22,9 +22,9 @@
             border-radius: 10px;
             box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
             width: 500px;
-            height: 300px;
+            min-height: 300px;
             text-align: center;
-            overflow: hidden;
+
         }
 
         h1 {
@@ -94,6 +94,15 @@
         .turma:hover {
             background-color: #116d88;
         }
+
+        .turmas {
+            max-height: 350px;
+            /* altura máxima visível */
+            overflow-y: auto;
+            /* ativa scroll interno */
+            padding-right: 5px;
+        }
+
 
         .seta {
             font-size: 1.4em;
