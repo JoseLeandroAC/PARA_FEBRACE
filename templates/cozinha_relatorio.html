@@ -9,16 +9,18 @@
     <style>
         body {
             margin: 0;
+            min-height: 100vh;
             background: linear-gradient(145deg, #061126, #02308a);
             font-family: "Poppins", sans-serif;
             display: flex;
             justify-content: center;
             padding: 50px 0;
+            background-attachment: fixed;
         }
 
         .container {
             width: 80%;
-            max-width: 900px;
+            max-width: 1000px;
             background: #1f4466;
             padding: 30px;
             border-radius: 10px;
@@ -44,49 +46,70 @@
             grid-template-columns: 2fr 1fr;
             padding: 14px 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            font-size: 1rem;
         }
 
         .cabecalho {
             font-weight: bold;
-            background: #2f628f;
+            background: #3570a4;
+            font-size: 1.3rem;
         }
 
         .linha:last-child {
             border-bottom: none;
         }
+
+        /* Linhas alternadas para ficar mais bonito */
+        .linha:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .linha:nth-child(even) {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>ALUNOS 9° A – MANHÃ</h1>
+    <body>
 
-        <div class="tabela">
+        <div class="container">
 
-            <div class="cabecalho">
-                <div>Nome</div>
-                <div>Restrição alimentar</div>
-            </div>
+            <h1>ALUNOS 9° A – MANHÃ</h1>
 
-            <div class="linha">
-                <div>Carollayne Ferreira da Silva</div>
-                <div>Sim (intolerância a lactose)</div>
-            </div>
+            <div class="tabela">
 
-            <div class="linha">
-                <div>Alana Camilli</div>
-                <div>Nenhuma</div>
-            </div>
+                <div class="cabecalho">
+                    <div>Nome</div>
+                    <div>Restrição alimentar</div>
+                </div>
 
-            <div class="linha">
-                <div>Guilherme Gaijutis</div>
-                <div>Nenhuma</div>
+                <div class="linha">
+                    <div>Carollayne Ferreira da Silva</div>
+                    <div>Sim (intolerância a lactose)</div>
+                </div>
+
+                <div class="linha">
+                    <div>Alana Camilli</div>
+                    <div>Nenhuma</div>
+                </div>
+
+                <div class="linha">
+                    <div>Guilherme Gaijutis</div>
+                    <div>Nenhuma</div>
+                </div>
+                <div class="linha">
+                    <div>Rogério Gonçalves</div>
+                    <div>Nenhuma</div>
+                </div>
+
             </div>
 
         </div>
-    </div>
+
+       
+    </body>
 
 </body>
 
