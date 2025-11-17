@@ -89,6 +89,7 @@
             align-items: center;
             cursor: pointer;
             transition: background 0.3s;
+            text-decoration: none;
         }
 
         .turma:hover {
@@ -143,55 +144,86 @@
 
         <!-- Turmas da manhã -->
         <div id="manha" class="turmas">
-            <div class="turma">1º ANO - EFI <span class="seta">→</span></div>
-            <div class="turma">2º ANO - EFI <span class="seta">→</span></div>
-            <div class="turma">3º ANO - EFI <span class="seta">→</span></div>
-            <div class="turma">4º ANO - EFI <span class="seta">→</span></div>
-            <div class="turma">5º ANO - EFI <span class="seta">→</span></div>
-            <div class="turma">9º A - EFII <span class="seta">→</span></div>
-            <div class="turma">1º A - EM <span class="seta">→</span></div>
-            <div class="turma">1º B - EM <span class="seta">→</span></div>
-            <div class="turma">2º A - EM <span class="seta">→</span></div>
-            <div class="turma">2º B - EM <span class="seta">→</span></div>
-            <div class="turma">3º - EM <span class="seta">→</span></div>
+            <a href="cozinha_relatorio.html" class="turma">
+                1º ANO - EFI <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                2º ANO - EFI <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                3º ANO - EFI <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                4º ANO - EFI <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                5º ANO - EFI <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                9º ANO - EFII <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                1º A - EM <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                1º B - EM <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                2º A - EM <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                2º B - EM <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                3º - EM <span class="seta">→</span>
+            </a>
         </div>
 
         <!-- Turmas da tarde -->
         <div id="tarde" class="turmas">
-            <div class="turma">6º A - Tarde <span class="seta">→</span></div>
-            <div class="turma">6º B - Tarde <span class="seta">→</span></div>
-            <div class="turma">7º A - Tarde <span class="seta">→</span></div>
-            <div class="turma">8º A - Tarde <span class="seta">→</span></div>
-            <div class="turma">9º A - Tarde <span class="seta">→</span></div>
+            <a href="cozinha_relatorio.html" class="turma">
+                6º A - EFII <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                6º B - EFII <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                7º A - EFII <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                8º A - EFII <span class="seta">→</span>
+            </a>
+            <a href="cozinha_relatorio.html" class="turma">
+                9º B - EFII <span class="seta">→</span>
+            </a>
         </div>
-    </div>
 
-    <script>
-        const btnManha = document.getElementById("manhaBtn");
-        const btnTarde = document.getElementById("tardeBtn");
-        const manha = document.getElementById("manha");
-        const tarde = document.getElementById("tarde");
+        <script>
+            const btnManha = document.getElementById("manhaBtn");
+            const btnTarde = document.getElementById("tardeBtn");
+            const manha = document.getElementById("manha");
+            const tarde = document.getElementById("tarde");
 
-        function mostrarTurmas(periodoAtivo, periodoInativo, botaoAtivo, botaoInativo) {
-            // Remove classes de animação
-            periodoInativo.classList.remove("ativo");
-            botaoInativo.classList.remove("active");
+            function mostrarTurmas(periodoAtivo, periodoInativo, botaoAtivo, botaoInativo) {
+                // Remove classes de animação
+                periodoInativo.classList.remove("ativo");
+                botaoInativo.classList.remove("active");
 
-            // Adiciona animação de fade com pequeno delay
-            setTimeout(() => {
-                periodoAtivo.classList.add("ativo");
-                botaoAtivo.classList.add("active");
-            }, 100);
-        }
+                // Adiciona animação de fade com pequeno delay
+                setTimeout(() => {
+                    periodoAtivo.classList.add("ativo");
+                    botaoAtivo.classList.add("active");
+                }, 100);
+            }
 
-        btnManha.addEventListener("click", () =>
-            mostrarTurmas(manha, tarde, btnManha, btnTarde)
-        );
+            btnManha.addEventListener("click", () =>
+                mostrarTurmas(manha, tarde, btnManha, btnTarde)
+            );
 
-        btnTarde.addEventListener("click", () =>
-            mostrarTurmas(tarde, manha, btnTarde, btnManha)
-        );
-    </script>
+            btnTarde.addEventListener("click", () =>
+                mostrarTurmas(tarde, manha, btnTarde, btnManha)
+            );
+        </script>
 </body>
 
 </html>
